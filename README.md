@@ -38,6 +38,10 @@ pom.xml
 
 Learning Git, GitHub, and Jenkins with ChatGPT.
 
+##Sprint 1
+
+This change was made in the sprint1 branch.
+
 ## Author
 
 Rafael Vasquez
