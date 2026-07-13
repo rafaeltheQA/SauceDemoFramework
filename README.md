@@ -34,6 +34,10 @@ pom.xml
 - Page Object Model
 - TestNG Data Providers
 
+## Git Practice
+
+Learning Git, GitHub, and Jenkins with ChatGPT.
+
 ## Author
 
 Rafael Vasquez
