@@ -37,5 +37,11 @@ import utilities.FileReadUtilities;
     {
     	return driver.findElement(productsTitle).getText();
     }
+    public String getErrorMessage()
+    {
+    	return driver.findElement(
+    			By.cssSelector("h3[data-test='error']")
+    	).getText();
+    }
     
 }

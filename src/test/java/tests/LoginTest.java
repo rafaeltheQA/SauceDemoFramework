@@ -8,15 +8,23 @@ import pages.LoginPage;
 import utilities.TestDataProvider;
 
 public class LoginTest extends BaseTest {
-	
+
 	@Test(dataProvider = "loginData", dataProviderClass = TestDataProvider.class)
-	public void validLogin(String username, String password)
+	public void validLogin(String username, String password, boolean expectedSuccess)
 	{
-		
 		LoginPage loginPage = new LoginPage(driver);
-		
+
 		loginPage.login(username, password);
-		
-		Assert.assertEquals(loginPage.getProductsTitle(), "Products");
+
+		if (expectedSuccess)
+		{
+			Assert.assertEquals(loginPage.getProductsTitle(), "Products");
+		}
+		else
+		{
+			Assert.assertTrue(
+					loginPage.getErrorMessage().contains("locked out")
+			);
+		}
 	}
 }
