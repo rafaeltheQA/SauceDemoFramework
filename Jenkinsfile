@@ -19,15 +19,13 @@ pipeline {
                 sh 'mvn clean test'
             }
         }
+    }
 
-        stage('Publish Test Results') {
-            steps {
-                publishTestNGResults(
-                    id: 'My TestNG Report',
-                    fileIncludePattern: '**/testng-results.xml',
-                    failureOnTestFailure: true
-                )
-            }
+    post {
+        always {
+            testNG(
+                reportFilenamePattern: '**/testng-results.xml'
+            )
         }
     }
 }
